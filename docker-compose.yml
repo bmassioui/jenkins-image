@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  jenkins:
+    container_name: jenkins
+    build: .
+    ports:
+      - '80:8080'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/jenkins_home
+
+volumes:
+  jenkins_data:
+    driver: local
